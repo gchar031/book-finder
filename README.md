@@ -3,6 +3,7 @@
 ## Project Name: Book Finder
 
 The name of your project with deployed URL.
+Deployed site to a hosting service like [Github Pages](https://pages.github.com/).
 
 ## Project Description
 
