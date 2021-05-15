@@ -1,12 +1,12 @@
 # Project Overview
 
-## Project Name
+## Project Name: Book Finder
 
 The name of your project with deployed URL.
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+Using the Google Books API I can retrieve information about a book that the user search for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I al so plan to put an Anichan API that generates random anime quotes at the bottom of the page.
 
 ## API and Data Sample
 
@@ -42,9 +42,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---|
 |May 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
 |May 17| Project Approval / Core Application Structure (HTML, CSS, etc.) | Incomplete
-|May 18| Pseudocode / actual code | Incomplete
-|May 19| Initial Clickable Model  | Incomplete
-|May 20| MVP | Incomplete
+|May 18| Actual Code & Functonality Features (MVP) | Incomplete
+|May 19| MVP Functionality & CSS Design  | Incomplete
+|May 20| CSS Design & Debugging | Incomplete
 |May 21| Presentations | Incomplete
 
 ## Priority Matrix
@@ -59,9 +59,16 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Adding Form | H | 2hrs| 3.5hrs | 3.5hrs |
+| Working with Google API | H | 4hrs| 2.5hrs | 2.5hrs |
+| Working with Anime Quote API | M | 2hrs| 2.5hrs | 2.5hrs |
+| Structuring API Information into Webpage | H | 3hrs| 2.5hrs | 2.5hrs |
+| Debugging & Error Handling | H | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Image Design | M | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Webpage Header Design | M | 4hrs| 2.5hrs | 2.5hrs |
+| CSS Webpage Data Design | H | 4hrs| 2.5hrs | 2.5hrs |
+| CSS Webpage Footer Design | M | 3hrs| 2.5hrs | 2.5hrs |
+| Total | H | 28hrs| 5hrs | 5hrs |
 
 ## Code Snippet
 
