@@ -25,17 +25,17 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP 
 MVP:
-- [ ] Allow the user to search book by book title, author, isbn.(The default option to search will be author)
+- [ ] Allow the user to search book by book title.
 - [ ] Generate picture of book along with external link to see a preview of the book.
-- [ ] Have prices included with a link to the Google Book Store to purchase books.
 - [ ] Have the plot, year, publisher and edition show when the use selects a book.
 - [ ] Generate random anime quotes in the webpage at the header or footer.
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
-
-- Add second API
-- Use local storage to save user favorites
+- [ ] Have prices included with a link to the Google Book Store to purchase books.
+- [ ] Search by author and ISBN number.
+- [ ] Allow user to read the preview of the book in the site through Google.
+- [ ] Allow user to login into their Google Account too view thier bookshelves.
 
 ## Project Schedule
 
