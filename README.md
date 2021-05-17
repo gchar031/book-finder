@@ -58,8 +58,8 @@ https://animechan.vercel.app/api/random
 
 [Wireframe](https://wireframe.cc/pro/pp/125644bb5441662)
 
-![Desktop](/Screen%20Shot%202021-05-17%20at%209.55.40%20AM.png)
-![Mobile](/Screen%20Shot%202021-05-17%20at%209.58.35%20AM.png)
+![Desktop](/images/Screen%20Shot%202021-05-17%20at%209.55.40%20AM.png)
+![Mobile](/images/Screen%20Shot%202021-05-17%20at%209.58.35%20AM.png)
 
 ### MVP/PostMVP
 
@@ -87,7 +87,7 @@ https://animechan.vercel.app/api/random
 
 ## Priority Matrix
 
-![](/Screen%20Shot%202021-05-17%20at%2010.09.44%20AM.png)
+![](/images/Screen%20Shot%202021-05-17%20at%2010.09.44%20AM.png)
 
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
