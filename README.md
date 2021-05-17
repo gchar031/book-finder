@@ -93,15 +93,20 @@ https://animechan.vercel.app/api/random
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 2hrs| 3.5hrs | 3.5hrs |
-| Working with Google API | H | 3hrs| 2.5hrs | 2.5hrs |
+| API Call | H | 1hr| 2.5hrs | 2.5hrs |
+| Search Functionality | H | 3hrs| 2.5hrs | 2.5hrs |
+| Data Iteration| H | 3hrs| 2.5hrs | 2.5hrs |
+| Event Listeners | H | 2hrs| 2.5hrs | 2.5hrs |
+| Accessing API Data | H | 3hrs| 2.5hrs | 2.5hrs |
 | Working with Anime Quote API | L | 2hrs| 2.5hrs | 2.5hrs |
 | Structuring API Information into Webpage | H | 3hrs| 2.5hrs | 2.5hrs |
 | Debugging & Error Handling | H | 3hrs| 2.5hrs | 2.5hrs |
 | CSS Image Design | L | 3hrs| 2.5hrs | 2.5hrs |
 | CSS Webpage Header Design | L | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Modal Design | H | 3hrs| 2.5hrs | 2.5hrs |
 | CSS Webpage Data Design | H | 3hrs| 2.5hrs | 2.5hrs |
 | CSS Webpage Footer Design | L | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 25hrs| 5hrs | 5hrs |
+| Total | H | 39hrs| 5hrs | 5hrs |
 
 ## Code Snippet
 
