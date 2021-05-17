@@ -2,7 +2,7 @@
 
 ## Description
 
-Using the Google Books API I can retrieve information about a book that the user search for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I also plan to use another API that generates random anime quotes at the bottom of the page.
+Using the Google Books API I can retrieve information about a book that the user searches for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I also plan to use another API that generates random anime quotes at the bottom of the page.
 
 ## API and Data Sample
 This section will includes snippet from my API request for Google Books and Animechan.
