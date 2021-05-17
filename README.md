@@ -12,11 +12,53 @@ Using the Google Books API I can retrieve information about a book that the user
 ## API and Data Sample
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need.
-- Google Books [API](https://developers.google.com/books/docs/v1/using)
-- [Animechan API](https://animechan.vercel.app/)
+- Google Books [API Docs](https://developers.google.com/books/docs/v1/using)
+- Animechan [API Docs](https://animechan.vercel.app/)
 
-![Google Books](/Screen%20Shot%202021-05-17%20at%2010.14.04%20AM.png)
-![Animechan - Quotes](/Screen%20Shot%202021-05-17%20at%2010.14.27%20AM.png)
+Google Endpoint & Parameters
+https://www.googleapis.com/books/v1/volumes?q=intitle:harry&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw
+```json
+{
+    "kind": "books#volumes",
+    "totalItems": 493,
+    "items": [
+        {
+            "kind": "books#volume",
+            "id": "4wQgevKtp7cC",
+            "etag": "evFV/qzjPrs",
+            "selfLink": "https://www.googleapis.com/books/v1/volumes/4wQgevKtp7cC",
+            "volumeInfo": {
+                "title": "Horrible Hands Harry",
+                "authors": [
+                    "Betty Cernech"
+                ],
+                "publisher": "AuthorHouse",
+                "publishedDate": "2011-11",
+                "industryIdentifiers": [
+                    {
+                        "type": "ISBN_13",
+                        "identifier": "9781467061391"
+                    },
+                    {
+                        "type": "ISBN_10",
+                        "identifier": "1467061395"
+                    }
+                ],
+                "readingModes": {
+                    "text": false,
+                    "image": true
+                },
+```
+
+Animechan Endpoint & Parameters
+https://animechan.vercel.app/api/random
+```json
+{
+    "anime": "Jinrui wa Suitai Shimashita",
+    "character": "Watashi",
+    "quote": "I always thought of humans as intelligent dominoes, since they tend to follow each other."
+}
+```
 
 ## Wireframes
 
