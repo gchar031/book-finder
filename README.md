@@ -15,12 +15,15 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 - Google Books [API] https://developers.google.com/books/docs/v1/using
 - [Animechan API](https://animechan.vercel.app/)
 
+![Google Books](/Screen%20Shot%202021-05-17%20at%2010.14.04%20AM.png)
+![Animechan - Quotes](/Screen%20Shot%202021-05-17%20at%2010.14.27%20AM.png)
+
 ## Wireframes
 
 [Wireframe](https://wireframe.cc/pro/pp/125644bb5441662)
 
-```
-```
+![Desktop](/Screen%20Shot%202021-05-17%20at%209.55.40%20AM.png)
+![Mobile](/Screen%20Shot%202021-05-17%20at%209.58.35%20AM.png)
 
 ### MVP/PostMVP
 
@@ -57,8 +60,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
-![](/Screen%20Shot%202021-05-17%20at%209.53.27%20AM.png)
+![](/Screen%20Shot%202021-05-17%20at%2010.09.44%20AM.png)
 
 ## Timeframes
 
