@@ -13,7 +13,7 @@ Using the Google Books API I can retrieve information about a book that the user
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need.
 - Google Books [API] https://developers.google.com/books/docs/v1/using
-- Animechan [API](https://animechan.vercel.app/)
+- [Animechan API](https://animechan.vercel.app/)
 
 ## Wireframes
 
