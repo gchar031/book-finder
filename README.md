@@ -13,23 +13,23 @@ Using the Google Books API I can retrieve information about a book that the user
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need.
 - Google Books [API] https://developers.google.com/books/docs/v1/using
-- Animechan [API] (https://animechan.vercel.app/)
+- Animechan [API](https://animechan.vercel.app/)
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
-[Wireframe] (https://wireframe.cc/NVgLBx)
+[Wireframe](https://wireframe.cc/NVgLBx)
 
 ### MVP/PostMVP
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
-
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+MVP:
+- [ ] Allow the user to search book by book title, author, isbn.(The default option to search will be author)
+- [ ] Generate picture of book along with external link to see a preview of the book.
+- [ ] Have prices included with a link to the Google Book Store to purchase books.
+- [ ] Have the plot, year, publisher and edition show when the use selects a book.
+- [ ] Generate random anime quotes in the webpage at the header or footer.
 
 #### PostMVP  
 *These are examples only. Replace with your own Post-MVP features.*
