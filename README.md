@@ -58,7 +58,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
-![plot](/master/Screen%20Shot%202021-05-17%20at%209.53.27%20AM.png)
+![](/Screen%20Shot%202021-05-17%20at%209.53.27%20AM.png)
 
 ## Timeframes
 
