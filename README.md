@@ -17,7 +17,10 @@ Specify the API you are using and include a link. Show us a snippet of JSON retu
 
 ## Wireframes
 
-[Wireframe](https://wireframe.cc/NVgLBx)
+[Wireframe](https://wireframe.cc/pro/pp/125644bb5441662)
+
+```
+```
 
 ### MVP/PostMVP
 
@@ -36,6 +39,7 @@ MVP:
 - [ ] Search by author and ISBN number.
 - [ ] Allow user to read the preview of the book in the site through Google.
 - [ ] Allow user to login into their Google Account too view thier bookshelves.
+- [ ] Make a mobile version design of the project.
 
 ## Project Schedule
 
@@ -54,6 +58,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+```img
+
+```
 
 ## Timeframes
 
