@@ -7,17 +7,18 @@ Deployed site to a hosting service like [Github Pages](https://pages.github.com/
 
 ## Project Description
 
-Using the Google Books API I can retrieve information about a book that the user search for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I al so plan to put an Anichan API that generates random anime quotes at the bottom of the page.
+Using the Google Books API I can retrieve information about a book that the user search for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I also plan to use another API that generates random anime quotes at the bottom of the page.
 
 ## API and Data Sample
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need.
-- Google Books [API]https://developers.google.com/books/docs/v1/using
-- Animechan [API]https://animechan.vercel.app/
+- Google Books [API] https://developers.google.com/books/docs/v1/using
+- Animechan [API] (https://animechan.vercel.app/)
 
 ## Wireframes
 
 Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+[Wireframe] (https://wireframe.cc/NVgLBx)
 
 ### MVP/PostMVP
 
