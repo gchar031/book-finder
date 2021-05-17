@@ -1,17 +1,11 @@
-# Project Overview
+# Book Finder
 
-## Project Name: Book Finder
-
-The name of your project with deployed URL.
-Deployed site to a hosting service like [Github Pages](https://pages.github.com/).
-
-## Project Description
+## Description
 
 Using the Google Books API I can retrieve information about a book that the user search for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I also plan to use another API that generates random anime quotes at the bottom of the page.
 
 ## API and Data Sample
-
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need.
+This section will includes snippet from my API request for Google Books and Animechan.
 - Google Books [API Docs](https://developers.google.com/books/docs/v1/using)
 - Animechan [API Docs](https://animechan.vercel.app/)
 
@@ -69,17 +63,13 @@ https://animechan.vercel.app/api/random
 
 ### MVP/PostMVP
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
 #### MVP 
-MVP:
 - [ ] Allow the user to search book by book title.
 - [ ] Generate picture of book along with external link to see a preview of the book.
 - [ ] Have the plot, year, publisher and edition show when the use selects a book.
 - [ ] Generate random anime quotes in the webpage at the header or footer.
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 - [ ] Have prices included with a link to the Google Book Store to purchase books.
 - [ ] Search by author and ISBN number.
 - [ ] Allow user to read the preview of the book in the site through Google.
@@ -87,10 +77,6 @@ MVP:
 - [ ] Make a mobile version design of the project.
 
 ## Project Schedule
-
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 |  Day | Deliverable | Status
 |---|---| ---|
 |May 14-16| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
@@ -105,11 +91,6 @@ You are **responsible** for scheduling time with your squad to seek approval for
 ![](/Screen%20Shot%202021-05-17%20at%2010.09.44%20AM.png)
 
 ## Timeframes
-
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 2hrs| 3.5hrs | 3.5hrs |
@@ -125,14 +106,5 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
-
-```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
-```
-
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  # book-finder
-A search engine for books
+This section will document what changes were made and the reasoning behind those changes.
