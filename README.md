@@ -72,13 +72,13 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Form | H | 2hrs| 3.5hrs | 3.5hrs |
 | Working with Google API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Working with Anime Quote API | M | 2hrs| 2.5hrs | 2.5hrs |
+| Working with Anime Quote API | L | 2hrs| 2.5hrs | 2.5hrs |
 | Structuring API Information into Webpage | H | 3hrs| 2.5hrs | 2.5hrs |
 | Debugging & Error Handling | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Image Design | M | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Webpage Header Design | M | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Image Design | L | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Webpage Header Design | L | 3hrs| 2.5hrs | 2.5hrs |
 | CSS Webpage Data Design | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Webpage Footer Design | M | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Webpage Footer Design | L | 3hrs| 2.5hrs | 2.5hrs |
 | Total | H | 25hrs| 5hrs | 5hrs |
 
 ## Code Snippet
