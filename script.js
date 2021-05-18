@@ -65,19 +65,21 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
   let bookDiv = document.createElement('div')
   bookDiv.classList.add('book') //to refer to to style later in CSS
   let bookData =
-    `<img src= "${image}" style="width: 100px;" id="bkcover"></img>
-  <h4>${title}</h4>
-  <h5>${author}</h5>
-  <button class="modalbtn">Click for more...</button>
-  <div class='bksModal bkContainer'>
-  <div id='modalContent'>
-   <span class="close">&times;</span>
-   <p>Publisher: ${publisher}</p>
-   <p>Published Date: ${date}</p>
-   <p>Pages: ${pageN}</p>
-   <p>Preview Links: <a href="${preview}">Google Preview</a></p>
-   <p>Description: ${plot}</p></div>
-   </div>`
+    `<img src= "${image}"id="bkcover"></img>
+    <div class="intro">
+    <h4>${title}</h4>
+    <h5>${author}</h5>
+    <p>Pages: ${pageN}</p>
+   
+    <button class="modalbtn">Click for more...</button> </div>
+    <div class='bksModal bkContainer'>
+    <div id='modalContent'>
+    <span class="close">&times;</span>
+    <p>Publisher: ${publisher}</p>
+    <p>Published Date: ${date}</p>
+    <p>Preview Links: <a href="${preview}">Google Preview</a></p>
+    <p>Description: ${plot}</p></div>
+    </div>`
   //send data to DOM
   bookDiv.insertAdjacentHTML('beforeend', bookData)
   //console.log(resultsdiv)  //to check for undefined
