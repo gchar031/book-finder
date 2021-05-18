@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--icon for search btn-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script defer src="./script.js"></script>
   <title>Book Finder</title>
@@ -17,7 +18,7 @@
   <!--Where user will input the information of the book they are searching for. Reset will clear the search box and the results.-->
   <form>
     <label for="search-txt">
-      <input type="text" name="search-txt" id="search-txt">
+      <input type="text" name="search-txt" id="search-txt" placeholder="Search your book...">
     </label>
     <label for="search-type">
       <select id="type">
@@ -25,12 +26,13 @@
         <option value="author">Author</option>
         <option value="isbn">ISBN Number</option>
       </select>
-      <button id="submit">Submit</button>
+      <!-- To have search btn icon Source: https://www.w3schools.com/howto/howto_css_search_button.asp-->
+      <button type="submit" id="submitSearch"><i class="fa fa-search"></i></button>
     </label>
   </form>
   <!--This section will display the books retrieved froom Google Books from the user's search text.-->
   <section id="results">
-    <p>Hello</p>
+    
   </section>
   <!--The footer will show a random quote and more information about about the building of the webpage.-->
 <footer>
