@@ -4,16 +4,17 @@ let resultsContainer = document.querySelector('#results')//grab the location for
 
 //get data from the Google Books API for book title search
 async function getBookDataByTitle(text) {
+  let call //for callback
   try {
     const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
     const response = await axios.get(url)
     let data = response.data.items
-    bookData(data) //pass the data to a function will send the information to DOM
+    bookData(data)
     //console.log(data)
+    return data
   } catch (error) {
     console.log(error)
   }
-  
 }
 
 function bookData(bookInfo) {
@@ -48,13 +49,16 @@ function bookData(bookInfo) {
     let pageNum = ''
     if (book.volumeInfo.pageCount != null) {
         pageNum = `${book.volumeInfo.pageCount}`
-      } else pageNum = `N/A`
-    //format the data
+    } else pageNum = `N/A`
+    
+    //formatBookData(bookInformation)
     formatBookData(title, author, date, publisher, image, preview, plot, pageNum)
+    addModoalListeners()
   });
+
 }
 
-
+//format the data and send data into the DOM(title, author, date, publisher, image, preview, plot, pageN)
 function formatBookData(title, author, date, publisher, image, preview, plot, pageN) {
   let resultsdiv = document.querySelector("#results")
   //create new divs for each book
@@ -64,8 +68,8 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
     `<img src= "${image}" style="width: 100px;" id="bkcover"></img>
   <h4>${title}</h4>
   <h5>${author}</h5>
-  <button class="modalbtn">Click for more...</button><br>
-  <div id='bkmodal' class='bksModal'>
+  <button class="modalbtn">Click for more...</button>
+  <div class='bksModal bkContainer'>
   <div id='modalContent'>
    <span class="close">&times;</span>
    <p>Publisher: ${publisher}</p>
@@ -78,26 +82,29 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
   bookDiv.insertAdjacentHTML('beforeend', bookData)
   //console.log(resultsdiv)  //to check for undefined
   resultsdiv.insertAdjacentElement('beforeend', bookDiv)
-  modalListener()//add event listeners to modals
 }
 
-function modalListener() {
+//add modal listeners after modal containers were created so null is not returned
+function addModoalListeners(){
   //add event listener for Modal
   //source help from: https://www.w3schools.com/howto/howto_css_modals.asp 
-  let modelContent = document.getElementById('modalContent')
-  let close = document.getElementsByClassName('close')
-  let mdlbtn = document.getElementById('modalbtn')
-  mdlbtn.addEventListener('click', function(){
-    modelContent.style.display = 'block'
-  })
-  close.addEventListener('click', function(){
-    modelContent.style.display = 'none'
-  })
-  window.addEventListener('click', function(){
-    modelContent.style.display = 'none' //clicks anywhere outside of modal then the modal dissapears
-  })
+  let modalView = document.querySelectorAll('.bksModal')
+  let closemdl = document.querySelectorAll('.close')
+  let mdlbtn = document.querySelectorAll('.modalbtn')
+  let modalArray = Array.from(mdlbtn).entries()
+  //help from src:https://blr.design/blog/multiple-modals/ to make multiple modals work
+  for (let [index, btn] of modalArray) {
+    function show (){
+      modalView[index].style.display = "block"
+    }
+    function hide () {
+      modalView[index].style.display = "none"
+    }
+    btn.addEventListener("click", show)
+    closemdl[index].addEventListener("click", hide)
+  }
+  // window.addEventListener("click", hide)//clicks anywhere outside of modal then the modal dissapears
 }
-
 
 
 //add event listener for submit button
@@ -105,8 +112,7 @@ let form = document.querySelector('form')
 form.addEventListener('submit', (ebtn) => {
   ebtn.preventDefault()//to prevent form from refreshing when the search icon is clicked
   let searchText = document.querySelector('#search-txt').value
-  console.log(searchText)
-  //removeResults(resultsContainer)
+  removeResults(resultsContainer)
   //if statements for each drop down to run appropriate fetch function -POST MVP
   getBookDataByTitle(searchText)
 })
@@ -136,6 +142,5 @@ function animeQuote(quotes) {
   let quote = quotes.quote
   let quotep = document.querySelector('#quoteft p')
   quotep.textContent = `"${quote} - ${name}, ${anime}"`
-  console.log(`${quote} - ${name}, ${anime}`)
 }
 getAnimeData()
