@@ -1,12 +1,36 @@
 //global variable to be used by all functions
 let resultsContainer = document.querySelector('#results')//grab the location for where the data should be and use later to clear div
-//let searchType = document.getElementById('#type') //post-MVP
+
 
 //get data from the Google Books API for book title search
 async function getBookDataByTitle(text) {
-  let call //for callback
   try {
     const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
+    const response = await axios.get(url)
+    let data = response.data.items
+    bookData(data)
+    console.log(data)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+async function getBookDataByAuthor(text) {
+  try {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
+    const response = await axios.get(url)
+    let data = response.data.items
+    bookData(data)
+    console.log(data)
+    return data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function getBookDataByISBN(text) {
+  try {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
     const response = await axios.get(url)
     let data = response.data.items
     bookData(data)
@@ -23,13 +47,13 @@ function bookData(bookInfo) {
     //create variables for the data needed
     let title = book.volumeInfo.title
     let author = ""
-    if (author != null) {
+    if (book.volumeInfo.authors != undefined) {
       author = book.volumeInfo.authors
     }else  author = "N/A"
   
     let date = book.volumeInfo.publishedDate
     let publisher = ''
-    if (book.volumeInfo.publisher != null) {
+    if (book.volumeInfo.publisher != undefined) {
       publisher = book.volumeInfo.publisher
     } else publisher = 'N/A'
 
@@ -42,43 +66,72 @@ function bookData(bookInfo) {
     let preview = book.volumeInfo.previewLink
 
     let plot = ""
-      if (book.volumeInfo.description != null) {
+      if (book.volumeInfo.description != undefined) {
         plot = book.volumeInfo.description
       } else plot = 'N/A'
     
     let pageNum = ''
-    if (book.volumeInfo.pageCount != null) {
+    if (book.volumeInfo.pageCount != undefined) {
         pageNum = `${book.volumeInfo.pageCount}`
     } else pageNum = `N/A`
-    
+    let isbn = ''
+    let isbn13 = ''
+    if (book.volumeInfo.industryIdentifiers != undefined) {
+      if (book.volumeInfo.industryIdentifiers[1] == undefined) {
+        isbn = book.volumeInfo.industryIdentifiers[0].identifier
+        isbn13 = 'N/A'
+      }
+      else if (book.volumeInfo.industryIdentifiers[0].identifier != undefined && book.volumeInfo.industryIdentifiers[1].identifier != undefined) {
+        isbn = book.volumeInfo.industryIdentifiers[0].identifier
+        isbn13 = book.volumeInfo.industryIdentifiers[1].identifier
+      }
+    }
+    else {
+      isbn = "N/A";
+      isbn13 = "N/A";
+    }
+    let price = '' //intialize price and check if book can be sold
+    let currency = ''
+    let buyLk = ''
+    if (book.saleInfo.saleability == "FOR_SALE") {
+      price = book.saleInfo.retailPrice.amount
+      currency = book.saleInfo.retailPrice.currencyCode
+      buyLk = book.saleInfo.buyLink
+    } else {
+      price = 'N/A'
+      currencyCode = 'N/A'
+    }
     //formatBookData(bookInformation)
-    formatBookData(title, author, date, publisher, image, preview, plot, pageNum)
+    formatBookData(title, author, date, publisher, image, preview, plot, pageNum, isbn,isbn13, price, currency, buyLk)
     addModoalListeners()
   });
 
 }
 
 //format the data and send data into the DOM(title, author, date, publisher, image, preview, plot, pageN)
-function formatBookData(title, author, date, publisher, image, preview, plot, pageN) {
+function formatBookData(title, author, date, publisher, image, preview, plot, pageN, isbn, isbn13, price, currency,blink) {
   let resultsdiv = document.querySelector("#results")
   //create new divs for each book
   let bookDiv = document.createElement('div')
   bookDiv.classList.add('book') //to refer to to style later in CSS
+  //POST MVP- price, preview link,
   let bookData =
     `<img src= "${image}"id="bkcover"></img>
     <div class="intro">
     <h4>${title}</h4>
     <h5>Author(s):<br>${author}</h5>
-    <p>Pages: ${pageN}</p>
-   
+    <p>Price: <a href ="${blink}" target="_blank">${price} ${currency}</a></p>
     <button class="modalbtn">Click for more...</button> </div>
     <div class='bksModal bkContainer'>
     <div class='modalContent'>
     <span class="close">&times;</span>
-    <p>Publisher: ${publisher}</p>
-    <p>Published Date: ${date}</p>
-    <p>Preview Links: <a href="${preview}">Google Preview</a></p>
-    <p>Description: ${plot}</p></div>
+    <p><b>Publisher:</b> ${publisher}</p>
+    <p><b>Published Date:</b> ${date}</p>
+    <p><b>ISBN:</b> ${isbn}</p>
+    <p><b>ISBN-13:</b> ${isbn13}</p>
+    <p><b><b>Pages:</b> ${pageN}</p> 
+    <p><b>Preview Links:</b> <a href="${preview}" target="_blank">Google Preview</a></p>
+    <p><b>Description:</b> ${plot}</p></div>
     </div>`
   //send data to DOM
   bookDiv.insertAdjacentHTML('beforeend', bookData)
@@ -104,8 +157,18 @@ function addModoalListeners(){
     }
     btn.addEventListener("click", show)
     closemdl[index].addEventListener("click", hide)
+    window.onclick = function (event) {
+      if (event.target == modalView[index])
+        modalView[index].style.display = "none";
+    }
   }
-  // window.addEventListener("click", hide)//clicks anywhere outside of modal then the modal dissapears
+  // window.onclick = function(e){
+  //   if (e.target == modalView) {
+  //     modalView.forEach(v => {
+  //       v.style.display = "none"
+  //     })
+  //   }
+  // }//clicks anywhere outside of modal then the modal dissapears
 }
 
 
@@ -116,7 +179,14 @@ form.addEventListener('submit', (ebtn) => {
   let searchText = document.querySelector('#search-txt').value
   removeResults(resultsContainer)
   //if statements for each drop down to run appropriate fetch function -POST MVP
-  getBookDataByTitle(searchText)
+  let searchType = document.getElementById('type') //post-MVP
+  if (searchType.options[searchType.selectedIndex].text == "Author") {
+    getBookDataByAuthor(searchText)
+  }
+  //src: https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
+  else if (searchType.options[searchType.selectedIndex].text == "ISBN Number") {
+    getBookDataByISBN(searchText)
+  }else getBookDataByTitle(searchText)
 })
 
 //reset for every new search
