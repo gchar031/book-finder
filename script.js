@@ -10,7 +10,7 @@ async function getBookDataByTitle(text) {
     const response = await axios.get(url)
     let data = response.data.items
     bookData(data)
-    //console.log(data)
+    console.log(data)
     return data
   } catch (error) {
     console.log(error)
@@ -68,12 +68,12 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
     `<img src= "${image}"id="bkcover"></img>
     <div class="intro">
     <h4>${title}</h4>
-    <h5>${author}</h5>
+    <h5>Author(s):<br>${author}</h5>
     <p>Pages: ${pageN}</p>
    
     <button class="modalbtn">Click for more...</button> </div>
     <div class='bksModal bkContainer'>
-    <div id='modalContent'>
+    <div class='modalContent'>
     <span class="close">&times;</span>
     <p>Publisher: ${publisher}</p>
     <p>Published Date: ${date}</p>

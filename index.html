@@ -5,10 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styles.css">
+  <!-- for search button -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--Body, Header & Footer Font-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Playfair+Display:wght@500&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Pattaya&family=Playfair+Display:wght@500&display=swap"
     rel="stylesheet">
   <!--icon for search btn-->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -16,6 +18,7 @@
   <title>Book Finder</title>
 </head>
 <body>
+  <div id='top'>
   <header>
     <h1>Book Finder</h1>
   </header>
@@ -29,11 +32,10 @@
         <option value="title">Title</option>
         <option value="author">Author</option>
         <option value="isbn">ISBN Number</option>
-      </select>
+      </select></label>
       <!-- To have search btn icon Source: https://www.w3schools.com/howto/howto_css_search_button.asp-->
       <button type="submit" id="submitSearch"><i class="fa fa-search"></i></button>
-    </label>
-  </form>
+  </form></body></div>
   <!--This section will display the books retrieved froom Google Books from the user's search text.-->
   <section id="results">
     
