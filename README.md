@@ -92,23 +92,24 @@ https://animechan.vercel.app/api/random
 ## Timeframes
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 2hrs| 3.5hrs | 3.5hrs |
+| Adding Form | H | 2hrs| 1hr | 3.5hrs |
 | API Call | H | 1hr| 2.5hrs | 2.5hrs |
-| Search Functionality | H | 3hrs| 2.5hrs | 2.5hrs |
-| Data Iteration| H | 3hrs| 2.5hrs | 2.5hrs |
-| Event Listeners | H | 2hrs| 2.5hrs | 2.5hrs |
-| Accessing API Data | H | 3hrs| 2.5hrs | 2.5hrs |
-| Working with Anime Quote API | L | 2hrs| 2.5hrs | 2.5hrs |
-| Structuring API Information into Webpage | H | 3hrs| 2.5hrs | 2.5hrs |
+| Search Functionality | H | 3hrs| 2hrs | 2hrs |
+| Data Iteration| H | 3hrs| 2hrs | 2hrs |
+| Event Listeners | H | 2hrs| 2hrs | 2hrs |
+| Accessing API Data | H | 3hrs| .5hrs | .5hr |
+| Working with Anime Quote API | L | 2hrs| 1hr | 1hr |
+| Structuring API Information into Webpage | H | 3hrs| 2hrs | 2hrs |
 | Debugging & Error Handling | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Image Design | L | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Webpage Header Design | L | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Modal Design | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Webpage Data Design | H | 3hrs| 2.5hrs | 2.5hrs |
-| CSS Webpage Footer Design | L | 3hrs| 2.5hrs | 2.5hrs |
+| CSS Image Design | L | 3hrs| 2hrs | 2hrs |
+| CSS Webpage Header Design | L | 3hrs| 1hrs | 1hrs |
+| CSS Modal Design | H | 3hrs| 3hrs | 3hrs |
+| CSS Webpage Data Design | H | 3hrs| 2hrs | 2hrs |
+| CSS Webpage Footer Design | L | 3hrs| 1hrs | 1hrs |
 | Total | H | 39hrs| 5hrs | 5hrs |
+
 
 ## Code Snippet
 
 ## Change Log
-This section will document what changes were made and the reasoning behind those changes.
+Reset was no longer added because with every new search the old results were cleared from the webpage through code.
