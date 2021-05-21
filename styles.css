@@ -15,6 +15,7 @@ header{
   border-radius: 5px;
   margin: 0px;
 }
+/* top portion of the webpage that includes both the header and the form */
 #top{
   background-color: #f2e2ba;
 }
@@ -39,7 +40,7 @@ input[type=text],#submitSearch, #type{
 label{
   align-items: center;
 }
-#submitSearch{
+#submitSearch, #previewBook{
   width: 150px;
   height: 30px;
   background-color: #629488;
@@ -48,12 +49,20 @@ label{
   font-weight: 800;
   text-align: center;
 }
+#submitSearch:hover,#submitSearch:focus,
+#previewBook:hover, #previewBook:focus{
+  background-color: #334b45;
+}
 #results{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
 }
-
+#viewerCanvas{
+  display: hide;
+  width: 600px; 
+  height: 500px
+}
 .book{
   display: flex;
   flex-flow: row wrap;
@@ -141,11 +150,13 @@ footer{
   animation: slide 3s;
   overflow: auto;
 }
+/* animates footer */
 @keyframes slide {
   0% {color: white; right:0px; top:0px;}
   50% {color:blue; left:200px; top:200px;}
   100% {color: whitesmoke; left:0px; top:0px;}
 }
+
 body::-webkit-scrollbar-track{
   border-radius: 10px;
   background: #BAF2E9;
@@ -155,4 +166,13 @@ body::-webkit-scrollbar-thumb{
 }
 body::-webkit-scrollbar-thumb:hover{
   background: #384d48;
+}
+
+@media screen and (max-width: 500px){
+  h1{
+    color: #f8f1ff;
+  }
+  form{
+    align-items: center;
+  }
 }

@@ -1,43 +1,45 @@
-//global variable to be used by all functions
+//global variable to be used by any function
 let resultsContainer = document.querySelector('#results')//grab the location for where the data should be and use later to clear div
-
 
 //get data from the Google Books API for book title search
 async function getBookDataByTitle(text) {
   try {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
+    const url = `https://www.googleapis.com/books/v1/volumes?q=intitle:${text}&maxResults=40&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`;
     const response = await axios.get(url)
     let data = response.data.items
     bookData(data)
-    console.log(data)
     return data
   } catch (error) {
     console.log(error)
-  }
-}
-async function getBookDataByAuthor(text) {
-  try {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
-    const response = await axios.get(url)
-    let data = response.data.items
-    bookData(data)
-    console.log(data)
-    return data
-  } catch (error) {
-    console.log(error)
+    alert('Please enter the correct search type.')
   }
 }
 
-async function getBookDataByISBN(text) {
+//allows user to search book(s) by author's name
+async function getBookDataByAuthor(text) {
   try {
-    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${text}&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`
+    const url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${text}&maxResults=40&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`;
     const response = await axios.get(url)
     let data = response.data.items
     bookData(data)
-    console.log(data)
     return data
   } catch (error) {
     console.log(error)
+    alert("Please enter the correct search type."); //if the correct search type was not entered then it will alert the user
+  }
+}
+
+//allows user to search by book's ISBN number
+async function getBookDataByISBN(text) {
+  try {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=isbn:${text}&maxResults=40&key=AIzaSyApQSdy4EmsF3dMV0XrbvCJ6HQAc1yqhlw`;
+    const response = await axios.get(url)
+    let data = response.data.items
+    bookData(data)
+    return data
+  } catch (error) {
+    console.log(error)
+    alert("Please enter the correct search type.");
   }
 }
 
@@ -140,7 +142,7 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
 }
 
 //add modal listeners after modal containers were created so null is not returned
-function addModoalListeners(){
+function addModoalListeners() {
   //add event listener for Modal
   //source help from: https://www.w3schools.com/howto/howto_css_modals.asp 
   let modalView = document.querySelectorAll('.bksModal')
@@ -149,26 +151,16 @@ function addModoalListeners(){
   let modalArray = Array.from(mdlbtn).entries()
   //help from src:https://blr.design/blog/multiple-modals/ to make multiple modals work
   for (let [index, btn] of modalArray) {
-    function show (){
+    function show() {
+      modalView.forEach(modal => modal.style.display = "none")
       modalView[index].style.display = "block"
     }
-    function hide () {
+    function hide() {
       modalView[index].style.display = "none"
     }
     btn.addEventListener("click", show)
     closemdl[index].addEventListener("click", hide)
-    window.onclick = function (event) {
-      if (event.target == modalView[index])
-        modalView[index].style.display = "none";
-    }
   }
-  // window.onclick = function(e){
-  //   if (e.target == modalView) {
-  //     modalView.forEach(v => {
-  //       v.style.display = "none"
-  //     })
-  //   }
-  // }//clicks anywhere outside of modal then the modal dissapears
 }
 
 
@@ -177,18 +169,18 @@ let form = document.querySelector('form')
 form.addEventListener('submit', (ebtn) => {
   ebtn.preventDefault()//to prevent form from refreshing when the search icon is clicked
   let searchText = document.querySelector('#search-txt').value
-  removeResults(resultsContainer)
   //if statements for each drop down to run appropriate fetch function -POST MVP
   let searchType = document.getElementById('type') //post-MVP
+  //src: https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
+  removeResults(resultsContainer)
   if (searchType.options[searchType.selectedIndex].text == "Author") {
     getBookDataByAuthor(searchText)
   }
-  //src: https://stackoverflow.com/questions/14976495/get-selected-option-text-with-javascript
   else if (searchType.options[searchType.selectedIndex].text == "ISBN Number") {
     getBookDataByISBN(searchText)
   }else getBookDataByTitle(searchText)
+  
 })
-
 //reset for every new search
 function removeResults(element) {
   while (element.lastChild) {
@@ -196,7 +188,8 @@ function removeResults(element) {
   }
 }
 
-//Grabbed anime quote data
+
+//Grabs anime quote data
 async function getAnimeData() {
   try {
     const url = "https://animechan.vercel.app/api/random"
@@ -207,12 +200,12 @@ async function getAnimeData() {
     console.log(error)
   }
 }
-//sent anime data to DOM
+//sends anime data to DOM
 function animeQuote(quotes) {
   let anime = quotes.anime
   let name = quotes.character
   let quote = quotes.quote
   let quotep = document.querySelector('#quoteft p')
-  quotep.textContent = `"${quote} - ${name}, ${anime}"`
+  quotep.textContent = `"${quote}" - ${name}, ${anime}`
 }
-getAnimeData()
+getAnimeData() //calls the fucntion
