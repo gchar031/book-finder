@@ -87,8 +87,7 @@ function bookData(bookInfo) {
         isbn = book.volumeInfo.industryIdentifiers[0].identifier
         isbn13 = book.volumeInfo.industryIdentifiers[1].identifier
       }
-    }
-    else {
+    }else {
       isbn = "N/A";
       isbn13 = "N/A";
     }
@@ -117,6 +116,7 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
   let bookDiv = document.createElement('div')
   bookDiv.classList.add('book') //to refer to to style later in CSS
   //POST MVP- price, preview link,
+  //source help from: https://www.w3schools.com/howto/howto_css_modals.asp 
   let bookData =
     `<img src= "${image}"id="bkcover"></img>
     <div class="intro">
@@ -144,15 +144,14 @@ function formatBookData(title, author, date, publisher, image, preview, plot, pa
 //add modal listeners after modal containers were created so null is not returned
 function addModoalListeners() {
   //add event listener for Modal
-  //source help from: https://www.w3schools.com/howto/howto_css_modals.asp 
   let modalView = document.querySelectorAll('.bksModal')
   let closemdl = document.querySelectorAll('.close')
   let mdlbtn = document.querySelectorAll('.modalbtn')
-  let modalArray = Array.from(mdlbtn).entries()
   //help from src:https://blr.design/blog/multiple-modals/ to make multiple modals work
+  let modalArray = Array.from(mdlbtn).entries()
   for (let [index, btn] of modalArray) {
     function show() {
-      modalView.forEach(modal => modal.style.display = "none")
+      modalView.forEach(modal => modal.style.display = "none") //closes all modals before opening a new one
       modalView[index].style.display = "block"
     }
     function hide() {
@@ -208,4 +207,4 @@ function animeQuote(quotes) {
   let quotep = document.querySelector('#quoteft p')
   quotep.textContent = `"${quote}" - ${name}, ${anime}`
 }
-getAnimeData() //calls the fucntion
+getAnimeData() //calls the fucntion to grab the quote then display it 

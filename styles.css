@@ -93,7 +93,6 @@ h5{
   max-height: 200px;
 }
 
-
 /*source: https://www.w3schools.com/howto/howto_css_modals.asp */
 /*Modal Customization */
 .bksModal{
@@ -157,22 +156,15 @@ footer{
   100% {color: whitesmoke; left:0px; top:0px;}
 }
 
-body::-webkit-scrollbar-track{
-  border-radius: 10px;
-  background: #BAF2E9;
-}
-body::-webkit-scrollbar-thumb{
-  background: #384d48;
-}
-body::-webkit-scrollbar-thumb:hover{
-  background: #384d48;
-}
-
 @media screen and (max-width: 500px){
   h1{
     color: #f8f1ff;
   }
   form{
     align-items: center;
+  }
+  .modalContent{
+    height: 200px;
+    width: 250px;
   }
 }
