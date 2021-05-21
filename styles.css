@@ -146,7 +146,7 @@ footer{
 
 #quoteft{
   font-style: italic;
-  animation: slide 3s;
+  animation: slide 9s;
   overflow: auto;
 }
 /* animates footer */
