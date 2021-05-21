@@ -1,5 +1,5 @@
 # Book Finder
-
+[Deployed Project](https://gchar031.github.io/book-finder/)
 ## Description
 
 Using the Google Books API I can retrieve information about a book that the user searches for. This information includes the author, title, year the book was published, the plot of the book, and external links provided to retrieve more information about the book. In addition I also plan to use another API that generates random anime quotes at the bottom of the page.
@@ -83,7 +83,7 @@ https://animechan.vercel.app/api/random
 |May 18| Actual Code & Functonality Features (MVP) | Complete
 |May 19| MVP Functionality & CSS Design  | Complete
 |May 20| CSS Design & Debugging | Complete
-|May 21| Presentations | Incomplete
+|May 21| Presentations | Complete
 
 ## Priority Matrix
 
