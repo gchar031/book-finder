@@ -126,9 +126,10 @@ if (book.volumeInfo.industryIdentifiers != undefined) {
     }
 ```
 ## Change Log
-Reset was no longer added because with every new search the old results were cleared from the webpage through code.
-Navigation bar with links to book results and information was no longer added and instead modals were user to show more information about each book.
-For POST-MVP Google Preivew could not be used due to an constructor error.
-Implemented two Post MVP items to project: expand search options to ISBN and author and prices linked to Google's Book Store.
-Added more description for each book: ISBN, ISBN-13, page number, and published date.
-Increased maximum results to 40 from the default of 10 results.
+- Reset was no longer added because with every new search the old results were cleared from the webpage through code.
+- Navigation bar with links to book results and information was no longer added and instead modals were user to show more information about each book.
+- For POST-MVP Google Preivew could not be used due to an constructor error.
+- Implemented two Post MVP items to project: expand search options to ISBN and author and prices linked to Google's Book Store.
+- Added more description for each book: ISBN, ISBN-13, page number, and published date.
+- Increased maximum results to 40 from the default of 10 results.
+- Apperanced of webpage changed to display the more important information that do not take much space and hide the rest of the information of a book in its' modal.
